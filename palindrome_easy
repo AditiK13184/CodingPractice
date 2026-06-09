@@ -1,0 +1,26 @@
+#Leetcode Question 9 
+#Solution in Java
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        int original = x;
+        int rev = 0;
+        if (x<0){
+            return false;
+        }
+        while (x > 0)
+        {
+            int last_digit = x%10;
+            x = x/10;
+
+            rev = (rev*10) + last_digit;
+
+        }
+        if (original==rev){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
