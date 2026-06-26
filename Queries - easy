@@ -1,0 +1,13 @@
+#Leetcode question - 182
+#DBMS Question
+
+SELECT email AS Email
+FROM Person
+GROUP BY email
+HAVING COUNT(*) > 1;
+
+
+#Leetcode Question - 181
+
+SELECT e.name AS Employee FROM Employee e JOIN Employee m ON e.managerId = m.id
+WHERE e.salary > m.salary;
