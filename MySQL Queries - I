@@ -5,3 +5,6 @@ SELECT name AS Customers FROM Customers WHERE id NOT IN ( SELECT customerId FROM
 #Leetcode Question - 577
 SELECT e.name, b.bonus FROM Employee e LEFT JOIN Bonus b ON e.empId = b.empId
 WHERE b.bonus < 1000 OR b.bonus IS NULL;
+
+#Leetcode Question - 1050
+select actor_id, director_id from ActorDirector group by director_id, actor_id having count(director_id) >= 3;
