@@ -8,3 +8,6 @@ WHERE b.bonus < 1000 OR b.bonus IS NULL;
 
 #Leetcode Question - 1050
 select actor_id, director_id from ActorDirector group by director_id, actor_id having count(director_id) >= 3;
+
+#Leetcode Question - 595
+SELECT name, population, area FROM World WHERE area >= 300000 OR population >= 25000000;
