@@ -14,3 +14,6 @@ SELECT name, population, area FROM World WHERE area >= 300000 OR population >= 2
 
 #Leetcode Question - 196
 DELETE p1 FROM Person p1 JOIN Person p2 ON p1.email = p2.email AND p1.id > p2.id;
+
+#Leetcode Question - 176
+SELECT MAX(salary) AS SecondHighestSalary FROM Employee WHERE salary < ( SELECT MAX(salary) FROM Employee );
