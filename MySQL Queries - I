@@ -20,3 +20,6 @@ SELECT MAX(salary) AS SecondHighestSalary FROM Employee WHERE salary < ( SELECT 
 
 #Leetcode Question - 511
 SELECT player_id, MIN(event_date) AS first_login FROM Activity GROUP BY player_id;
+
+#Leetcode Question - 584
+SELECT name FROM Customer WHERE referee_id <> 2 OR referee_id IS NULL;
