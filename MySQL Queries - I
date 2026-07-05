@@ -23,3 +23,6 @@ SELECT player_id, MIN(event_date) AS first_login FROM Activity GROUP BY player_i
 
 #Leetcode Question - 584
 SELECT name FROM Customer WHERE referee_id <> 2 OR referee_id IS NULL;
+
+#Leetcode Question - 596
+SELECT class FROM Courses GROUP BY class HAVING COUNT(student) >= 5;
