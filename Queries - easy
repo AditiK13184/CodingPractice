@@ -8,6 +8,8 @@ HAVING COUNT(*) > 1;
 
 
 #Leetcode Question - 181
-
 SELECT e.name AS Employee FROM Employee e JOIN Employee m ON e.managerId = m.id
 WHERE e.salary > m.salary;
+
+#Leetcode Question - 586
+SELECT customer_number FROM Orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1;
