@@ -23,3 +23,8 @@ WHERE sales_id NOT IN (
     INNER JOIN Company c ON o.com_id = c.com_id
     WHERE c.name = 'RED'
 );
+
+#Leetcode Question - 619
+SELECT MAX(num) AS num FROM (
+    SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(*) = 1
+) AS single_numbers;
