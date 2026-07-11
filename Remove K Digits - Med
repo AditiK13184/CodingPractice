@@ -1,0 +1,42 @@
+#Leetcode Question - 402
+
+char* removeKdigits(char* num, int k) {
+    int n = strlen(num);
+    char *stack = (char *)malloc((n + 1) * sizeof(char));
+    int top = -1;
+
+    for (int i = 0; i < n; i++) {
+        while (top >= 0 && k > 0 && stack[top] > num[i]) {
+            top--;
+            k--;
+        }
+        stack[++top] = num[i];
+    }
+
+    while (k > 0 && top >= 0) {
+        top--;
+        k--;
+    }
+
+    int start = 0;
+    while (start <= top && stack[start] == '0') {
+        start++;
+    }
+
+    if (start > top) {
+        free(stack);
+        char *ans = (char *)malloc(2);
+        ans[0] = '0';
+        ans[1] = '\0';
+        return ans;
+    }
+
+    int len = top - start + 1;
+    char *ans = (char *)malloc(len + 1);
+
+    strncpy(ans, stack + start, len);
+    ans[len] = '\0';
+
+    free(stack);
+    return ans;
+}
