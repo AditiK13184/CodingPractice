@@ -28,3 +28,7 @@ WHERE sales_id NOT IN (
 SELECT MAX(num) AS num FROM (
     SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(*) = 1
 ) AS single_numbers;
+
+
+#Leetcode Question - 620
+SELECT * FROM Cinema WHERE id % 2 = 1 AND description != 'boring' ORDER BY rating DESC;
