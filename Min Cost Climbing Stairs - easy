@@ -1,0 +1,14 @@
+#Leetcode Question - 746
+
+int minCostClimbingStairs(int* cost, int costSize) {
+    int b = cost[0];
+    int a = cost[1];
+
+    for (int i = 2; i < costSize; i++) {
+        int curr = cost[i] + (a < b ? a : b);
+        b = a;
+        a = curr;
+    }
+
+    return a < b ? a : b;
+}
