@@ -26,3 +26,6 @@ SELECT name FROM Customer WHERE referee_id <> 2 OR referee_id IS NULL;
 
 #Leetcode Question - 596
 SELECT class FROM Courses GROUP BY class HAVING COUNT(student) >= 5;
+
+#Leetcode  Question - 610
+SELECT x, y, z, CASE WHEN x + y > z AND x + z > y AND y + z > x THEN 'Yes' ELSE 'No' END AS triangle FROM Triangle;
