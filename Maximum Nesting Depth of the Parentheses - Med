@@ -1,0 +1,20 @@
+#Leetcode Question - 1614
+
+int maxDepth(char *s) {
+    int depth = 0;
+    int maxDepth = 0;
+
+    while (*s) {
+        if (*s == '(') {
+            depth++;
+            if (depth > maxDepth)
+                maxDepth = depth;
+        }
+        else if (*s == ')') {
+            depth--;
+        }
+        s++;
+    }
+
+    return maxDepth;
+}
