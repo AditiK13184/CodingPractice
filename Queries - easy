@@ -42,3 +42,19 @@ JOIN Logs l3
     ON l2.id = l3.id - 1
 WHERE l1.num = l2.num
   AND l2.num = l3.num;
+
+#Leetcode Question - 184
+SELECT
+    d.name AS Department,
+    e.name AS Employee,
+    e.salary AS Salary
+FROM Employee e
+JOIN Department d
+ON e.departmentId = d.id
+JOIN (
+    SELECT departmentId, MAX(salary) AS max_salary
+    FROM Employee
+    GROUP BY departmentId
+) m
+ON e.departmentId = m.departmentId
+AND e.salary = m.max_salary;
