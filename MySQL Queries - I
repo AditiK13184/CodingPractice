@@ -35,3 +35,21 @@ SELECT s1.score, ( SELECT COUNT(DISTINCT s2.score) FROM Scores s2 WHERE s2.score
 
 #Leetcode Question - 627
 UPDATE Salary SET sex = IF(sex = 'm', 'f', 'm');
+
+#Leetcode Question - 185
+# Write your MySQL query statement below
+SELECT
+    d.name AS Department,
+    e.name AS Employee,
+    e.salary AS Salary
+FROM (
+    SELECT *,
+           DENSE_RANK() OVER (
+               PARTITION BY departmentId
+               ORDER BY salary DESC
+           ) AS rnk
+    FROM Employee
+) e
+JOIN Department d
+ON e.departmentId = d.id
+WHERE e.rnk <= 3;
